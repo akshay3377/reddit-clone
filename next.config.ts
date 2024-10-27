@@ -1,7 +1,19 @@
+// import type { NextConfig } from "next";
+
+// const nextConfig: NextConfig = {
+//   /* config options here */
+// };
+
+// export default nextConfig;
+
+
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
+  images: {
+    domains: ["dfstudio-d420.kxcdn.com"], // Add allowed image domains here
+  },
+  // other config options
 };
 
 export default nextConfig;
