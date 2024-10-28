@@ -15,7 +15,7 @@ export default function Home() {
 
       <section className="flex gap-6">
         {/* left main (2/3 width) */}
-        <main className="flex flex-col gap-3 w-2/3">
+        <main className="flex flex-col gap-3 w-full lg:w-2/3">
           <PostCard />
           <PostCard />
           <PostCard />
