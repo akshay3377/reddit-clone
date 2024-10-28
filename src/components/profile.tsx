@@ -27,13 +27,13 @@ import {
               <AvatarFallback>CN</AvatarFallback>
             </Avatar>
           </DropdownMenuTrigger>
-          <DropdownMenuContent className="w-56 mr-8">
-            <DropdownMenuLabel>{'a'}</DropdownMenuLabel>
+          <DropdownMenuContent className="w-56 mr-5 mt-2">
+            <DropdownMenuLabel>{'Username'}</DropdownMenuLabel>
             <DropdownMenuSeparator />
             <DropdownMenuGroup>
               <Link href="/profile" passHref>
                 <DropdownMenuItem>
-                  <User className="mr-2 h-4 w-4" />
+                  <User className="mr-1 h-4 w-4" />
                   <span>Profile</span>
                 </DropdownMenuItem>
               </Link>
@@ -44,7 +44,7 @@ import {
             //     signOut({ callbackUrl: "/" }); // Sign out and redirect to homepage
             //   }}
             >
-              <LogOut className="mr-2 h-4 w-4" />
+              <LogOut className="mr-1 h-4 w-4" />
               <span>Logout</span>
             </DropdownMenuItem>
           </DropdownMenuContent>

@@ -207,7 +207,7 @@ export default function SidebarLayout({ children }: { children: React.ReactNode 
     <SidebarProvider>
       <Navbar />
       <Sidebar collapsible="icon">
-        <SidebarHeader>
+        <SidebarHeader className="pt-6">
           <SidebarMenu>
             <SidebarMenuItem>
               <DropdownMenu>

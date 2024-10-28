@@ -35,7 +35,7 @@ const dummyTrips: Trip[] = [
     }
   },
   { 
-    _id: "1", 
+    _id: "2", 
     name: "Beach Paradise", 
     distance: "5 km", 
     image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
@@ -46,7 +46,7 @@ const dummyTrips: Trip[] = [
     }
   },
   { 
-    _id: "1", 
+    _id: "3", 
     name: "Beach Paradise", 
     distance: "5 km", 
     image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
@@ -57,7 +57,7 @@ const dummyTrips: Trip[] = [
     }
   },
   { 
-    _id: "1", 
+    _id: "4", 
     name: "Beach Paradise", 
     distance: "5 km", 
     image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
@@ -68,7 +68,7 @@ const dummyTrips: Trip[] = [
     }
   },
   { 
-    _id: "1", 
+    _id: "5", 
     name: "Beach Paradise", 
     distance: "5 km", 
     image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
@@ -79,7 +79,7 @@ const dummyTrips: Trip[] = [
     }
   },
   { 
-    _id: "1", 
+    _id: "6", 
     name: "Beach Paradise", 
     distance: "5 km", 
     image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
@@ -122,7 +122,7 @@ export default function LocationSlider() {
             ))}
           </div>
         ) : trip.length > 0 ? (
-          <Carousel opts={{ loop: true, align: "start" }}>
+          <Carousel opts={{ loop: false, align: "start" }}>
             <CarouselContent>
               {trip.map((item) => (
                 <CarouselItem
