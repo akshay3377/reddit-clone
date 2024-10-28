@@ -1,8 +1,9 @@
-// import Image from "next/image";
-// import { Button } from "@/components/ui/button"
+// import Homes from "./(main)/page";
+
 
 // export default function Home() {
 //   return (
+//     <Homes/>
 //     // <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
 //     //   <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
 //     //     <Image
@@ -99,7 +100,7 @@
 //     //   </footer>
 //     // </div>
 
-//     <Button>Click me</Button>
+//     // <Button>Click me</Button>
 //   );
 // }
 
@@ -107,105 +108,3 @@
 
 
 
-import LocationSlider from "@/components/home-slider";
-import { Button } from "@/components/ui/button";
-import { MessageSquare } from "lucide-react";
-// import LocationSlider from "./home-slider";
-// import { Button } from "./ui/button";
-
-// Sticky Layout for the main content
-import React from 'react'
-
-export default function Page() {
-  return (
-    <div className="">
-    
-  
-      <section className="w-full flex items-center justify-center">
-          <LocationSlider />
-        </section>
-      <div className="flex-1 flex  ">
-        <div className="w-3/4  overflow-y-auto">
-          {/* <h3>List Section</h3> */}
-          <ul>
-            {Array.from({ length: 10 }, (_, i) => (
-            <PostCard/>
-            ))}
-          </ul>
-        </div>
-        <div className="w-1/4 p-4">
-          <div className="sticky top-[80px] p-4 bg-yellow-200 rounded shadow-lg z-10">
-            {" "}
-            {/* Offset for Navbar and Sticky */}
-            {/* <h3>Sticky Note</h3>
-            <p>This note remains visible as you scroll.</p> */}
-            <CommunitiesCard />
-            <CommunitiesCard />
-            <CommunitiesCard />
-            <CommunitiesCard />
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
-
-
-  
-function PostCard() {
-    const avatarImg = `https://api.dicebear.com/7.x/lorelei/svg?seed=Charlie1&radius=15&backgroundType=gradientLinear&earrings=variant01,variant03`;
-  
-    return (
-      <div className="w-full rounded-xl bg-background flex flex-col gap-3 pb-4 overflow-auto border h-auto">
-        <section className="flex w-full justify-between gap-2 p-2">
-          <div className="flex items-center gap-1">
-            <img className="h-12 w-12" src={avatarImg} alt="user-img" />
-            <p className="text-sm text-gray-600">utkarshseth</p>
-            <p className="text-gray-400 text-xs">7 hr. ago</p>
-          </div>
-  
-          <div className="flex gap-3">
-            <Button className="bg-blue-500 text-white font-bold rounded-3xl text-xs py-1 px-3">
-              Join
-            </Button>
-          </div>
-        </section>
-        <p className="font-bold px-4">
-          Lorem ipsum dolor sit amet consectetur adipisicing elit.
-        </p>
-        <div className="w-full h-[550px] bg-black rounded-2xl">
-          <img
-            className="h-full w-full"
-            src="https://api.slingacademy.com/public/sample-photos/57.jpeg"
-            alt="post-img"
-          />
-        </div>
-  
-        <div className="flex items-center gap-3 px-2 pt-3">
-          <div className="bg-secondary text-secondary-foreground hover:bg-secondary/80 flex items-center gap-2 rounded-full p-1">
-            <button className="p-2 rounded-full">↑</button>
-            <p>849</p>
-            <button className="p-2 rounded-full">↓</button>
-          </div>
-  
-          <Button variant="secondary" className="flex items-center gap-1 rounded-full">
-            <MessageSquare /> 114
-          </Button>
-        </div>
-      </div>
-    );
-  }
-  
-  function CommunitiesCard() {
-    const imgURL = `https://api.dicebear.com/7.x/pixel-art/svg?seed=Charlie44`;
-  
-    return (
-      <div className="flex gap-3 rounded-full px-3 py-1.5 cursor-pointer">
-        <img className="h-10 w-10" src={imgURL} alt="community-img" />
-        <div className="flex flex-col gap-1">
-          <p className="text-sm text-gray-600">utkarshseth</p>
-          <p className="text-xs text-gray-400">4,345,555 members</p>
-        </div>
-      </div>
-    );
-  }
