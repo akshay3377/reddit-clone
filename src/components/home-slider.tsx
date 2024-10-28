@@ -1,5 +1,3 @@
-"use client";
-
 import {
   Carousel,
   CarouselContent,
@@ -17,34 +15,93 @@ interface Trip {
   name: string;
   distance: string;
   image: string;
+  description: string;
+  user: {
+    name: string;
+    profilePic: string;
+  };
 }
 
 const dummyTrips: Trip[] = [
-  { _id: "1", name: "Beach Paradise", distance: "5 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-  { _id: "2", name: "Mountain Escape", distance: "10 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-  { _id: "3", name: "Urban Adventure", distance: "3 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-  { _id: "4", name: "Forest Retreat", distance: "15 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-  { _id: "5", name: "Desert Safari", distance: "20 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-  { _id: "6", name: "Desert Safari", distance: "20 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-  { _id: "7", name: "Desert Safari", distance: "20 km", image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg" },
-
+  { 
+    _id: "1", 
+    name: "Beach Paradise", 
+    distance: "5 km", 
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
+    description: "A beautiful beach location.", 
+    user: {
+      name: "John Doe",
+      profilePic: "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  { 
+    _id: "1", 
+    name: "Beach Paradise", 
+    distance: "5 km", 
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
+    description: "A beautiful beach location.", 
+    user: {
+      name: "John Doe",
+      profilePic: "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  { 
+    _id: "1", 
+    name: "Beach Paradise", 
+    distance: "5 km", 
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
+    description: "A beautiful beach location.", 
+    user: {
+      name: "John Doe",
+      profilePic: "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  { 
+    _id: "1", 
+    name: "Beach Paradise", 
+    distance: "5 km", 
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
+    description: "A beautiful beach location.", 
+    user: {
+      name: "John Doe",
+      profilePic: "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  { 
+    _id: "1", 
+    name: "Beach Paradise", 
+    distance: "5 km", 
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
+    description: "A beautiful beach location.", 
+    user: {
+      name: "John Doe",
+      profilePic: "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  { 
+    _id: "1", 
+    name: "Beach Paradise", 
+    distance: "5 km", 
+    image: "https://dfstudio-d420.kxcdn.com/wordpress/wp-content/uploads/2019/06/digital_camera_photo-980x653.jpg", 
+    description: "A beautiful beach location.", 
+    user: {
+      name: "John Doe",
+      profilePic: "https://randomuser.me/api/portraits/men/1.jpg"
+    }
+  },
+  // Add more dummy trip items as needed
 ];
 
 export default function LocationSlider() {
   const router = useRouter();
   const [trip, setTrip] = useState<Trip[]>(dummyTrips);
   const [currentValue, setCurrentValue] = useState("");
-  const [loading, setLoading] = useState(false);
+  // const [loading, setLoading] = useState(false);
 
-  const featureList = [
-    { label: "Beaches", value: "beaches" },
-    { label: "Hills", value: "hills" },
-    { label: "Outdoor", value: "outdoor" },
-  ];
+
 
   const handleFilterChange = (filterValue: string) => {
     setCurrentValue(filterValue);
-    // Filter the dummy data based on the selected filter
     const filteredTrips = dummyTrips.filter((trip) =>
       trip.name.toLowerCase().includes(filterValue.toLowerCase())
     );
@@ -56,9 +113,9 @@ export default function LocationSlider() {
   }, [currentValue]);
 
   return (
-    <section className="container pb-12">
+    <section className="container pb-4">
       <div className="mx-auto w-full">
-        {loading ? (
+        {false ? (
           <div className="flex gap-4">
             {Array.from({ length: 5 }).map((_, index) => (
               <SkeletonCard key={index} />
@@ -70,19 +127,36 @@ export default function LocationSlider() {
               {trip.map((item) => (
                 <CarouselItem
                   key={item._id}
-                  className="basis-1/2 sm:basis-1/3 md:basis-1/3 lg:basis-1/4 xl:basis-1/4"
+                  className="basis-1/1 sm:basis-1/3 md:basis-1/3 lg:basis-1/4 xl:basis-1/4"
                 >
                   <div
                     onClick={() => router.push(`/location/${item._id}`)}
-                    className="max-w-sm rounded-lg cursor-pointer overflow-hidden group"
+                    className="relative max-w-sm rounded-lg cursor-pointer overflow-hidden group bg-white shadow-md"
                   >
+                    {/* Image with Overlay */}
                     <Image
-                      className="object-cover rounded-sm h-48 flex-shrink-0 transition-transform duration-300 ease-in-out group-hover:scale-105"
+                      className="object-cover h-48 w-full transition-transform duration-300 ease-in-out group-hover:scale-105"
                       src={item.image}
                       alt={item.name}
                       width={400}
                       height={150}
                     />
+                    <div className="absolute left-0 bottom-0 pl-3  transition-opacity duration-300 flex flex-col justify-end text-white">
+                      <h3 className="font-semibold text-lg">{item.name}</h3>
+                      <p className="text-sm">{item.description}</p>
+                      <div className="flex items-center gap-2 py-3 rounded-b-lg">
+                        <Image
+                          src={item.user.profilePic}
+                          alt={item.user.name}
+                          width={24}
+                          height={24}
+                          className="rounded-full"
+                        />
+                        <div>
+                          <p className="text-xs font-medium text-white">{item.user.name}</p>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </CarouselItem>
               ))}
@@ -98,7 +172,7 @@ export default function LocationSlider() {
   );
 }
 
-// SkeletonCard remains unchanged
+// SkeletonCard component remains unchanged
 export function SkeletonCard() {
   return (
     <div className="basis-1/2 sm:basis-1/3 md:basis-1/3 lg:basis-1/4 xl:basis-1/5">

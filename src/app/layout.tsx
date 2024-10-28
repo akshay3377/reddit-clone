@@ -82,7 +82,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import Sidebarlayout from "@/components/sidebarlayout";
 import { cn } from "@/lib/utils";
-import Navbar from "@/components/navbar";
+// import Navbar from "@/components/navbar";
 // import { ThemeProvider } from "@/components/theme-provider";
 
 // import { Toaster } from "@/components/ui/toaster";
@@ -140,9 +140,7 @@ export default function RootLayout({
       {/* <Toaster /> */}
       {/* </body> */}
 
-      <body
-        className={cn("", inter.className,)}
-      >
+      <body className={cn("", inter.className)}>
         <Sidebarlayout>
           <main className=" container  w-full  h-screen  ">{children}</main>
         </Sidebarlayout>
